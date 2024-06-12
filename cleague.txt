@@ -1,0 +1,10 @@
+Comets C 68 91 94 85 0 0 0 0 0 0 0 0 Chrysostomos Faddei S
+Bolts C 79 95 85 86 0 0 0 0 0 0 0 0 Shelly Faddei OPP
+Storm C 101 77 84 88 0 0 0 0 0 0 0 0 Vasileios Frederick OH
+Sharks C 97 85 84 86 0 0 0 0 0 0 0 0 Rafael Morris MB
+Horizon C 108 78 75 67 0 0 0 0 0 0 0 0 Leopold Darrow DS
+Behemoths C 93 93 82 79 0 0 0 0 0 0 0 0 Chrysostomos Darby MB
+Griffens C 74 78 71 74 0 0 0 0 0 0 0 0 Nikolasz Darby DS
+Gators C 85 90 95 73 0 0 0 0 0 0 0 0 Chrysostomos Derby L
+Swarm C 88 86 70 88 0 0 0 0 0 0 0 0 Rafael Tristin MB
+Guardians C 82 82 80 94 0 0 0 0 0 0 0 0 Nolan Reyes L

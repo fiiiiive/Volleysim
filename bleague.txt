@@ -1,0 +1,10 @@
+Shadows B 100 87 61 101 0 0 0 0 0 0 2 0 Terry Faddei S
+Strikers B 86 88 85 78 0 0 0 0 0 0 0 0 Franny Faddei OH
+Hydras B 90 72 81 86 0 0 0 0 0 0 0 0 Nolan Yuzuru DS
+Hunters B 92 68 89 87 0 0 0 0 0 0 0 0 Franny Lavern DS
+Rogues B 85 65 103 88 0 0 0 0 0 0 0 0 Leopold Morris OPP
+Wraiths B 77 90 97 92 0 0 0 1 0 0 0 1 Terry Lavern DS
+Sparks B 76 82 84 95 0 0 0 0 0 0 0 0 Chrysostomos Darrow L
+Lynx B 83 76 80 101 0 0 0 0 0 0 0 0 Thom Faddei OH
+Knights B 88 95 94 79 0 0 0 0 0 0 0 0 Thom Darby MB
+Serpents B 92 96 81 86 0 0 0 1 0 0 0 0 Thom Yuzuru S

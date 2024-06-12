@@ -1,0 +1,11 @@
+2
+Stampede A 82 92 84 74 0 0 0 0 0 0 0 0 Shelly Darrow S
+Mavericks A 95 98 87 71 0 1 0 0 0 0 0 1 Beau Frederick OH
+Novas A 89 90 83 89 1 0 1 0 0 0 0 0 Chrysostomos Morris OH
+Spiders A 76 97 84 102 1 0 0 1 0 0 0 1 Beau Monday OH
+Dragons A 80 92 88 95 0 0 1 1 0 0 0 0 Nolan Ernst MB
+Vandals A 93 73 86 91 0 0 0 0 0 0 2 0 Rafael Monday DS
+Phantoms A 99 96 77 70 0 0 0 0 1 0 0 1 Rafael Reyes OH
+Vipers A 82 87 95 92 0 1 0 0 0 0 0 0 Shelly Reyes L
+Stars A 91 84 103 82 0 0 0 1 1 0 0 0 Beau Faddei S
+Vortex A 88 84 85 77 0 0 0 1 0 0 0 0 Rafael Darrow DS
