@@ -41,15 +41,23 @@ There is no build step, package manifest, linter config, or test suite in this r
     standing (`random.randint(0, self.position + 5)`), so worse-placed teams trade more often.
   - `updateStreak()` tracks win/loss streaks and a rolling last-five-opponents record.
 - **`League`** — owns a list of `Team`s for one tier (A/B/C) and drives the season: weekly match
-  play (`week()`), standings (`printleague()`, `rank()`), the playoff qualification cut
-  (`playoffs()`), the full bracket (`championship()`: quarters → semis → third-place → final, called
-  once per league per season), and postseason awards (`postawards()`).
-  - `playGame()` and `watchGame()` are near-duplicate point-by-point match engines (one silent/fast,
-    one with `os.system('clear')` + `time.sleep` for a "watch mode" feel) — see spec's "Known
-    issues" before changing match logic, since the plan is to eventually merge these into one
-    engine that emits events. Point resolution: pick a random stat category (Swing/Block/Defense/
-    Serve), each team rolls `random.randint(0, their_stat_value)`, higher roll wins the point.
-    Standard 2-of-3 sets to 25 (15 for a deciding set), with a required 2-point win margin.
+  play (`week()`), standings (`printleague()`, `rank()`), and the playoff qualification cut
+  (`playoffs()`). League A and League B additionally run the full bracket (`championship()`: quarters
+  → semis → third-place → final) and postseason awards (`postawards()`) each season. **League C is
+  deliberately lower-stakes** — it's a feeder league without A/B's prestige, so `main.py` computes
+  `cleague.playoffs()` but never calls `cleague.championship()` or `cleague.postawards()`; League C's
+  postseason is just promoting its top two teams by standing via `printtoptwo()`. `podiums[5]`
+  ("League C Champions") exists on `Team` as a result but is never incremented, consistent with C
+  having no championship to win.
+  - `playGame()` is the point-by-point match engine. Point resolution: pick a random stat category
+    (Swing/Block/Defense/Serve), each team rolls `random.randint(0, their_stat_value)`, higher roll
+    wins the point. Regular-season matches and championship quarterfinals are best-of-3 sets to 25
+    (15-point decider); championship semifinals, the third-place match, and the final are best-of-5
+    (also 15-point decider) — **this asymmetry is intentional**, not a placeholder to unify. All sets
+    require a 2-point win margin. `watchGame()` is a near-duplicate of `playGame()` with
+    `os.system('clear')` + `time.sleep` added for a step-through "watch mode," but it's currently
+    **dead code** — nothing in `main.py` calls it. See spec's "Known issues" before changing match
+    logic, since the plan is to eventually merge these into one engine that emits events.
 
 ### Orchestration (`main.py`)
 
@@ -61,9 +69,12 @@ There is no build step, package manifest, linter config, or test suite in this r
    the spec calls out formalizing this into an explicit, inspectable schedule as roadmap work).
 4. Simulate 40 weeks per league, printing standings after each and offering a "view team" menu
    every 10 weeks.
-5. Run playoffs and the championship bracket for each league, then postseason awards.
-6. Prompt to play another season; if yes, apply promotion/relegation (`leagueswap()`) and loop.
-7. On exit, write all three leagues back out to their `.txt` files.
+5. Run playoffs for each league; run the championship bracket and postseason awards for League A and
+   League B only (see below — League C is a feeder league by design and has no bracket).
+6. Ask whether to play another season, then apply promotion/relegation (`leagueswap()`)
+   unconditionally — this runs every season regardless of the answer. The answer only gates whether
+   the outer `while` loop repeats.
+7. On exit (loop no longer repeating), write all three leagues back out to their `.txt` files.
 
 `leagueswap()` implements promotion/relegation between tiers: bottom two of A → B, top two of B → A,
 bottom two of B → C, top two of C → B. Each `League` accumulates `toptwo`/`bottomtwo` during
